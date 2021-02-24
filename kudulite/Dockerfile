@@ -47,7 +47,7 @@ ENV PATH=$PATH:/root/.dotnet/tools
 RUN cd /tmp \
     && git clone --depth 1 --branch $BRANCH https://github.com/$NAMESPACE/KuduLite.git KuduLite \
     && cd ./KuduLite/Kudu.Services.Web \
-    && benv dotnet=2.2.207 dotnet publish -c Release -o /opt/Kudu \
+    && benv dotnet=3-lts dotnet publish -c Release -o /opt/Kudu \
     && chmod 777 /opt/Kudu/Kudu.Services.Web.dll \
     && rm -rf /tmp/* \
     && chmod a+rw /var/nuget \
